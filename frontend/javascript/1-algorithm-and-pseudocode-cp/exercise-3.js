@@ -7,5 +7,6 @@
 // if (bilangan %2 == 0)
 //     jumlah = jumlah + bilangan
 // end if
+// bilangan ++
 // end loop
 // display jumlah
