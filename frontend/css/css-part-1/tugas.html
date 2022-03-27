@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="tugas.css">
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="nav">
+                <div class="logo">
+                    <a href="#">
+                        <h2>LM</h2>
+                    </a>
+                </div>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="info">
+                <p id="judul">RG Ideapad 9 The Most Powerfull Laptop</p>
+                <img src="assets/image/laptop.png" alt="Gambar Laptop">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum sit neque dicta vel porro sint ipsam
+                    animi voluptas, repellendus placeat necessitatibus facilis provident saepe mollitia hic ducimus
+                    accusamus recusandae fugit.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur exercitationem corrupti eos
+                    consectetur quibusdam rerum fuga ea doloremque incidunt, ad minus beatae dicta, quos necessitatibus
+                    ipsam vitae, autem et animi!
+                </p>
+                <a href="#" class="btn" target="_blank">More Info</a>
+            </div><br>
+            <div class="form-member">
+                <form method="POST" action="proses.php">
+                    Join Member for Discount
+                    <input type="hidden" name="halaman" value="1">
+                    <table>
+                        <tr>
+                            <td><label for="nama">Nama lengkap:</label></td>
+                            <td><input type="text" name="nama" id="nama"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="email">Email:</label></td>
+                            <td><input type="email" name="email" id="mail"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="phone">No.Hp:</label></td>
+                            <td><input type="phone" name="phone" id="phone"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="jenkel">Jenis kelamin:</label></td>
+                            <td><input type="radio" name="jenkel" id="jenkel" value="L">Laki-laki<br>
+                                <input type="radio" name="jenkel" id="jenkel" value="P">Perempuan</td>
+                        </tr>
+                    </table>
+                    <input type="submit" value=" Kirim ">
+                    <input type="reset" value="Reset">
+                </form>
+            </div>
+        </div>
+    </section><br>
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-info">
+                <div class="footer-info-left">
+                    <h3>About Us</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                </div>
+                <div class="footer-info-right">
+                    <h3 id="contact">Contact Us</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>Copyright &copy; 2022. All Right Reserved</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
