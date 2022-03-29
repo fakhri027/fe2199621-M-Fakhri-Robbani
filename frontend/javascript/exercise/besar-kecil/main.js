@@ -5,10 +5,10 @@ function tukarBesarKecil(kalimat) {
   var kecil = kalimat.toLowerCase();
   var hasil = '';
   for (var i = 0; i < kalimat.length; i++) {
-    if (kecil[i] === kalimat[i]) {
+    if (kecil[i] === kalimat[i]) { // untuk menjadikan hurus bersar
       hasil += kecil.toUpperCase()[i];
     }
-    else if (kecil[i] !== kalimat[i]) {
+    else if (kecil[i] !== kalimat[i]) { // untuk menjadikan hurus kecil
       hasil += kecil[i];
     }
   }

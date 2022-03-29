@@ -5,8 +5,8 @@
 
 var word = 'wow i will become frontend developer';
 var exampleFirstWord = word.substring(0, 3);
-var secondWord // do your own!
-var thirdWord // do your own!
+var secondWord = word.substring(4,5)// do your own!
+var thirdWord = word.substring(6,10) // do your own!
 var fourthWord // do your own!
 var fifthWord  // do your own!
 var sixthWord  // do your own!
@@ -17,5 +17,3 @@ console.log('Third Word: ' + thirdWord);
 console.log('Fourth Word: ' + fourthWord);
 console.log('Fifth Word: ' + fifthWord);
 console.log('Sixth Word: ' + sixthWord);
-
-console.log();
