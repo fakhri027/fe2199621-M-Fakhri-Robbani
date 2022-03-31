@@ -15,6 +15,21 @@
 function breakingRecords(scores) {
   // Write your code here
   // TODO: answer here
+  var min = scores[0];
+  var max = scores[0];
+  var minCount = 0;
+  var maxCount = 0;
+  for (var i = 1; i < scores.length; i++) {
+    if (scores[i] > max) {
+      max = scores[i];
+      maxCount++;
+    }
+    if (scores[i] < min) {
+      min = scores[i];
+      minCount++;
+    }
+  }
+  return [maxCount, minCount];
 }
 
 function main() {

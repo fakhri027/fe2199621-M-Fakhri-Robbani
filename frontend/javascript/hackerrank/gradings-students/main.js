@@ -14,6 +14,18 @@
 function gradingStudents(grades) {
   // Write your code here
   // TODO: answer here
+  let result = [];
+  for (let i = 0; i < grades.length; i++) {
+    let grade = grades[i];
+    if (grade >= 38) {
+      let nextMultipleOfFive = (Math.floor(grade / 5) + 1) * 5;
+      if (nextMultipleOfFive - grade < 3) {
+        grade = nextMultipleOfFive;
+      }
+    }
+    result.push(grade);
+  }
+  return result;
 }
 
 function main() {

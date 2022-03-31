@@ -13,6 +13,13 @@
 function staircase(n) {
   // Write your code here
   // TODO: answer here
+  let result = '';
+  for (let i = 0; i < n; i++) {
+    let spaces = n - i - 1;
+    let hashes = i + 1;
+    result += ' '.repeat(spaces) + '#'.repeat(hashes) + '\n';
+  }
+  return result;
 }
 
 function main() {

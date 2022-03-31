@@ -13,6 +13,23 @@
 function miniMaxSum(arr) {
   // Write your code here
   // TODO: answer here
+  var arrClone1 = arr.slice() 
+  var arrClone2 = arr.slice() 
+
+  var arrKecil = arrClone1.sort(function(a, b){return a - b;})
+  arrKecil.pop()
+
+  var arrBesar = arrClone2.sort(function(a, b){return b - a;})
+  arrBesar.pop()
+
+  function tambah(a, b) {
+    return a + b;
+  }
+
+  var hasil1 = arrKecil.reduce(tambah) 
+  var hasil2 = arrBesar.reduce(tambah)    
+
+  return (hasil1 + " " + hasil2)
 }
 
 function main() {
