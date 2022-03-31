@@ -14,6 +14,16 @@
 function birthdayCakeCandles(candles) {
   // Write your code here
 	// TODO: answer here
+  const tallestCandle = Math.max(...candles);
+  let numberOfTallestCandle = 0;
+
+  for (let i = 0; i < candles.length; i++) {
+    if (tallestCandle === candles[i]) {
+      numberOfTallestCandle = numberOfTallestCandle + 1;
+    }
+  }
+
+  return numberOfTallestCandle;
 }
 
 function main() {
