@@ -6,7 +6,7 @@ let quote = document.getElementById('random-quote');
 let author = document.getElementsByClassName('author')[0];
 let citation = document.getElementsByClassName('citation')[0];
 let year = document.getElementsByClassName('year')[0];
-let button = document.querySelector('button');
+let button = document.querySelector('.btn-generate');
 
 var quotes = [
 	{
@@ -172,7 +172,7 @@ var quotes = [
 ];
 
 // TODO: answer here
-document.querySelector("button").addEventListener("click", displayQuote);
+button.addEventListener("click", displayQuote);
 
 
 function getQuote() {
@@ -185,7 +185,6 @@ function getQuote() {
 function displayQuote() {
 	// TODO: answer here
 	let quoteResult = getQuote();
-	console.log(quoteResult);
 	quote.innerHTML = quoteResult.quote;
 	author.innerHTML = quoteResult.author;
 	citation.innerHTML = quoteResult.citation ? quoteResult.citation : "";
