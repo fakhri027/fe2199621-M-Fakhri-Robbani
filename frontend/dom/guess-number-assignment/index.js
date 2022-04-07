@@ -35,6 +35,7 @@ function checkNumber() {
   let userNumber = parseInt(input.value);
   if (userNumber < 1 || userNumber > 10) {
     displayMessage("Guess any number between 1 and 10")
+    score.innerHTML = parseInt(score.innerHTML) - 1;
   } else if (userNumber === randomNumber) {
     displayMessage("Yeay! you guessed it!")
     document.querySelector('.number').innerHTML = userNumber
