@@ -10,7 +10,7 @@ let winningCount = {
 function renderScore() {
     // TODO: answer here
     document.getElementById("x-wins").innerHTML = winningCount.X;
-  document.getElementById("o-wins").innerHTML = winningCount.O;
+    document.getElementById("o-wins").innerHTML = winningCount.O;
 }
 
 
@@ -30,7 +30,7 @@ function checkWinner() {
     if (getValue(2, 0) != "" && getValue(2, 0) === getValue(2, 1) && getValue(2, 0) === getValue(2, 2)) {
         winner = getValue(2, 0);
     }
-    
+
     //vertical
     if (getValue(0, 0) != "" && getValue(0, 0) === getValue(1, 0) && getValue(0, 0) === getValue(2, 0)) {
         winner = getValue(0, 0);
@@ -99,10 +99,10 @@ function generate() {
     let table = document.createElement("table");
     board.appendChild(table);
 
-    for (let i=0; i<SIZE; i++) {
+    for (let i = 0; i < SIZE; i++) {
         let tr = document.createElement("tr");
         table.appendChild(tr);
-        for (let j=0; j<SIZE; j++) {
+        for (let j = 0; j < SIZE; j++) {
             let td = document.createElement("td");
             tr.appendChild(td);
 

@@ -5,12 +5,17 @@
 function doubleChars(str) {
   // kerjakan disini
   // TODO: answer here
+  return str+str;
 }
 
 // function ini mengulang pengaplikasian callback pada str sejumlah num
 function repeat(str, num, cb) {
   // kerjakan disini
   // TODO: answer here
+  var result = '';
+  for (var i = 0; i < num; i++) {
+    result += cb(str);
+  }
+  return result;
 }
-
-console.log(repeat("triple", 2, doubleChars)); // ttttrrrriiiipppplllleeee
+console.log(repeat("triple", 1, doubleChars)); // ttttrrrriiiipppplllleeee
