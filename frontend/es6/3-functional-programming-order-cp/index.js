@@ -9,7 +9,7 @@
 
 function customisableGreeting(user, formatCallback) {
   // TODO: answer here
-  return `Hi name is ${formattedName}, how are you?`;
+  let { firstName, lastName } = user;
+  return `Hi name is ${formatCallback({ firstName, lastName })}, how are you?`;
 }
-
 module.exports = customisableGreeting
