@@ -18,23 +18,24 @@ class Thief extends Player {
 
   steal(player) {
     // TODO: answer here
-    if (this.randomizer() < this.getStealChance() && player.getGold() >= 5) {
-      this.setGold(this.getGold() + 5);
-      player.setGold(player.getGold() - 5);
+    if(player.gold < 5){
+      return 'Lawan terlalu miskin';
+    }
 
-      if (player.job === "Trickster"){
-        player.setStealChance(0.25);
-        return player.distractionPurse(this);
-      }else {
-        player.setHasBeenRobbed(true);
-        return "Berhasil mencuri 5 gold";
+    if(this.randomizer() < this.getStealChance()){
+      player.setGold(player.getGold() - 5);
+      this.setGold(this.getGold() + 5);
+
+      if(player.job === 'Trickster'){
+        return player.distractionPurse(this)
       }
-    }else if(player.getGold() < 5){
-      player.setHasBeenRobbed(false);
-      return "Lawan terlalu miskin";
-    }else {
-      player.setHasBeenRobbed(false);
-      return "Gagal mencuri, coba lain kali";
+
+      player.setHasBeenRobbed(true);
+      return 'Berhasil mencuri 5 gold';
+    }
+    else{
+      this.setHasBeenRobbed(false);
+      return 'Gagal mencuri, coba lain kali';
     }
   }
 }
@@ -59,23 +60,40 @@ class Trickster extends Player {
   distractionPurse(player) {
     const rng = this.randomizer();
     // TODO: answer here
-    if (this.getDistractionPurseChance() >= rng) {
-      return this.steal(player); 
-    } else {
-      return "Gagal mencuri balik"
+    if(rng < this.distractionPurseChance) {
+      if(player.getGold() < 10){
+        this.setGold(player.getGold())
+        player.setGold(0)
+        return 'Berhasil mencuri balik semua uang lawan'
+      }
+      player.setGold(player.getGold() - 10)
+      this.setGold(this.getGold() + 10)
+
+      return 'Berhasil mencuri balik 10 gold'
     }
+    return 'Gagal mencuri balik'
   }
 
   steal(player) {
     // TODO: answer here
-    if (player.getGold() > 10) {
-      this.setGold(this.getGold() + 10);
-      player.setGold(player.getGold() - 10);
-      return "Berhasil mencuri balik 10 gold";
-    } else {
-      this.setGold(this.getGold() + player.getGold());
-      player.setGold(0);
-      return "Berhasil mencuri balik semua uang lawan";
+    if(player.gold < 5){
+      return 'Lawan terlalu miskin';
+    }
+
+    if(this.randomizer() < this.getStealChance()){
+      player.setGold(player.getGold() - 5);
+      this.setGold(this.getGold() + 5);
+
+      if(player.job === 'Trickster'){
+        return player.distractionPurse(this)
+      }
+
+      player.setHasBeenRobbed(true);
+      return 'Berhasil mencuri 5 gold';
+    }
+    else{
+      this.setHasBeenRobbed(false);
+      return 'Gagal mencuri, coba lain kali';
     }
   }
 }
