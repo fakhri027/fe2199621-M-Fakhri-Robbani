@@ -16,6 +16,15 @@
 
 const findAnimal = (bush) => {
   // TODO: answer here
+  let lowerCaseBush = bush.toLowerCase();
+  let hasil = "";
+  for (let i = 0; i < lowerCaseBush.length; i++) {
+    if (lowerCaseBush[i] === bush[i]){
+      hasil += lowerCaseBush[i];
+    }else{
+      hasil += "";
+    }
+  }return hasil;
 };
 
 module.exports = findAnimal
