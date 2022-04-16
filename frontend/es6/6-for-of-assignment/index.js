@@ -14,5 +14,5 @@
 const checkOmnipresent = (array, valueToFind) => {
   // TODO: answer here
 };
-
+console.log(checkOmnipresent([[1, 2, 3,4], [5,4,1], [4, 14, 1]],1));
 module.exports = checkOmnipresent
