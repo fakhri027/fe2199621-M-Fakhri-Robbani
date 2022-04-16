@@ -21,6 +21,20 @@
  *
  * Hint: gunakan Math.round() untuk membulatkan nilai rata-rata.
  */
+ const students = [
+  {
+    name: "Yono",
+    nilai: [6, 8, 7, 7, 5, 5]
+  },
+  {
+    name: "Dodi",
+    nilai: [9, 6, 5, 10, 8, 6]
+  },
+  {
+    name: 'Dori',
+    nilai: [4, 5, 6, 3, 5, 6]
+  }
+]
 
 const returnUserAverageScore = (students) => {
   // TODO: answer here
@@ -29,8 +43,8 @@ const returnUserAverageScore = (students) => {
     return {
       name: student.name,
       rataNilai: Math.round(averageScore)
-    } 
-  }) 
+    }
+  })
 };
-
+console.log(returnUserAverageScore(students));
 module.exports = returnUserAverageScore

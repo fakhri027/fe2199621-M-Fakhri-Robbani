@@ -17,7 +17,8 @@ const countRepetition = (numbers) => {
     }
   });
 
-  return repetition;
+  return result;
 };
-
+const numbers = [1, 1, 1, 5, 5, 10, 9];
+console.log(countRepetition(numbers));
 module.exports = countRepetition
