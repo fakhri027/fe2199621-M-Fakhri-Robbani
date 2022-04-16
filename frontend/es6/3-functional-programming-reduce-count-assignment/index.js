@@ -8,6 +8,15 @@
 
 const countRepetition = (numbers) => {
   // TODO: answer here
+  let result = {};
+  numbers.forEach(number => {
+    if (result[number]) { 
+      result[number] += 1;
+    } else {
+      result[number] = 1;
+    }
+  });
+
   return repetition;
 };
 
