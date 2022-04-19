@@ -4,21 +4,23 @@
 // contoh: hehe => hheehhee
 function doubleChars(str) {
   // TODO: answer here
-  return str+str;
-}
+  let result = "";
+  for (let i = 0; i < str.length; i++) {
+    result += str[i] + str[i];
+  } 
+  return result;
+} 
 
 // function ini mengulang pengaplikasian callback pada str sejumlah num
 function repeat(str, num, cb) {
   // TODO: answer here
-  var result = '';
-  for (var i = 0; i < num; i++) {
-    result += cb(str);
-  }
+  let result = '';
+  for (let i = 0; i < str.length; i++) {
+    result += cb(str[i]).repeat(num);
+  } 
   return result;
+  
 }
-<<<<<<< HEAD
-console.log(repeat("triple", 1, doubleChars)); // ttttrrrriiiipppplllleeee
-=======
 
 console.log(repeat("triple", 2, doubleChars)); //  ttttrrrriiiipppplllleeee
 
@@ -26,4 +28,3 @@ module.exports = {
   doubleChars,
   repeat
 }
->>>>>>> 466979049e6a25d12227dd7a51f55bb2aefac437
