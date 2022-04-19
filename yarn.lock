@@ -1827,6 +1827,11 @@
   dependencies:
     "pend" "~1.2.0"
 
+"fe-rgkm@^1.0.0":
+  "integrity" "sha512-tPJWJmLT6G+IAfhQyxLeZqVobymJ+5HZMjYxBHSc4+P7FOyHEnGOUUtTp1tnGVGp5EUTFBDOxYgIiMDxPJHbzg=="
+  "resolved" "https://registry.npmjs.org/fe-rgkm/-/fe-rgkm-1.0.0.tgz"
+  "version" "1.0.0"
+
 "figures@^1.7.0":
   "integrity" "sha1-y+Hjr/zxzUS4DK3+0o3Hk6lwHS4="
   "resolved" "https://registry.npmjs.org/figures/-/figures-1.7.0.tgz"

@@ -13,15 +13,11 @@
 
 const checkOmnipresent = (array, valueToFind) => {
   // TODO: answer here
-  let subarray = [];
-  for (subarray of array) {
-    console.log(subarray);
-    }
-    if (subarray.includes(valueToFind)) {
-      return true;
-    }else{
-    return false;
-  }
+  let check = 0;
+  for (let subarray of array) {
+    subarray.includes(valueToFind) ? check++ : null;
+  } 
+  return check === array.length ? true : false;   
 };
-console.log(checkOmnipresent([[1, 2, 3], [5, 4, 1],[4, 14, 1]], 4));
+console.log(checkOmnipresent([[1, 2, 3], [5, 4, 1],[4, 14, 1]], 1));
 module.exports = checkOmnipresent
