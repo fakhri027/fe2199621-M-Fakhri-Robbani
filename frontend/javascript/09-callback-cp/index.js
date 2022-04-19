@@ -3,14 +3,12 @@
 // function ini menduplikasi tiap karakter pada sebuah string
 // contoh: hehe => hheehhee
 function doubleChars(str) {
-  // kerjakan disini
   // TODO: answer here
   return str+str;
 }
 
 // function ini mengulang pengaplikasian callback pada str sejumlah num
 function repeat(str, num, cb) {
-  // kerjakan disini
   // TODO: answer here
   var result = '';
   for (var i = 0; i < num; i++) {
@@ -18,4 +16,14 @@ function repeat(str, num, cb) {
   }
   return result;
 }
+<<<<<<< HEAD
 console.log(repeat("triple", 1, doubleChars)); // ttttrrrriiiipppplllleeee
+=======
+
+console.log(repeat("triple", 2, doubleChars)); //  ttttrrrriiiipppplllleeee
+
+module.exports = {
+  doubleChars,
+  repeat
+}
+>>>>>>> 466979049e6a25d12227dd7a51f55bb2aefac437
