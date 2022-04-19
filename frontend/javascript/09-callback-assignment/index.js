@@ -26,7 +26,9 @@
  *  { false:
  *    [ { name: 'Dito', year: 1992, place: 'Bogor' },
  *      { name: 'Uli', year: 1996, place: 'Bogor' } ],
- *   true: [ { name: 'Tegar', year: 1995, place: 'Depok' } ] }
+ *   true: 
+ *    [ { name: 'Tegar', year: 1995, place: 'Depok' } ] 
+ * }
  */
 
 const input = [
@@ -49,14 +51,17 @@ const input = [
 
 const isOdd = (data) => {
   // TODO: answer here
+  return data%2 === 0 ? false : true;
 };
 
 const groupBy = (array, callback) => array.reduce(
   (accumulator, dataValue) => {
     // TODO: answer here
+    let dataOdd = [];
+    let dataEven = [];
+    git 
   }, {}
 );
-
 console.log(groupBy(input, isOdd))
 
 module.exports = {

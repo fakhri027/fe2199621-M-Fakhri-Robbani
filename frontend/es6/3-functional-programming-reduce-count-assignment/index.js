@@ -8,17 +8,17 @@
 
 const countRepetition = (numbers) => {
   // TODO: answer here
-  let result = {};
-  numbers.forEach(number => {
-    if (result[number]) { 
-      result[number] += 1;
+  const repetition = numbers.reduce((prev, cur) => {
+    if(prev[cur] === undefined){
+      prev[cur] = 1;
     } else {
-      result[number] = 1;
+      prev[cur] += 1;
     }
-  });
-
-  return result;
+    return prev;
+  }, {});
+  return repetition;
 };
+
 const numbers = [1, 1, 1, 5, 5, 10, 9];
 console.log(countRepetition(numbers));
 module.exports = countRepetition
