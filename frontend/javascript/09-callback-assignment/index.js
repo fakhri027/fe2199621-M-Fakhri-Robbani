@@ -51,15 +51,17 @@ const input = [
 
 const isOdd = (data) => {
   // TODO: answer here
-  return data%2 === 0 ? false : true;
+  return data.year%2 === 0 ? false : true;
 };
 
 const groupBy = (array, callback) => array.reduce(
   (accumulator, dataValue) => {
     // TODO: answer here
-    let dataOdd = [];
-    let dataEven = [];
-    git 
+    const key = callback(dataValue);
+    if (!accumulator[key]) {
+      accumulator[key] = [];
+    }accumulator[key].push(dataValue);
+    return accumulator;
   }, {}
 );
 console.log(groupBy(input, isOdd))
