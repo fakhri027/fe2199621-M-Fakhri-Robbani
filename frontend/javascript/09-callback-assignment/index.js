@@ -31,8 +31,7 @@
  * }
  */
 
-const input = [
-  {
+const input = [{
     name: 'Adit',
     year: 1996,
     place: 'Bogor',
@@ -51,7 +50,7 @@ const input = [
 
 const isOdd = (data) => {
   // TODO: answer here
-  return data.year%2 === 0 ? false : true;
+  return data.year % 2 === 0 ? false : true;
 };
 
 const groupBy = (array, callback) => array.reduce(
@@ -60,7 +59,8 @@ const groupBy = (array, callback) => array.reduce(
     const key = callback(dataValue);
     if (!accumulator[key]) {
       accumulator[key] = [];
-    }accumulator[key].push(dataValue);
+    }
+    accumulator[key].push(dataValue);
     return accumulator;
   }, {}
 );

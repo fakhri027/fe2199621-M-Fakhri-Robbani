@@ -5,7 +5,7 @@ const onMyBirthday = (isMyFriendSick) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (!isMyFriendSick) {
-        return resolve(true);
+        return resolve(false);
       }
 
       return reject(false);
@@ -13,7 +13,7 @@ const onMyBirthday = (isMyFriendSick) => {
   });
 };
 
-onMyBirthday(false)
+onMyBirthday(true)
   .then((_) => console.log("Dapat kue"))
   .catch((_) => console.log("Tidak dapat kue"));
 

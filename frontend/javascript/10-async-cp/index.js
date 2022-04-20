@@ -41,7 +41,12 @@
  
  async function getDataPeopleById(id) {
    // TODO: answer here
+    const stringResult = await getStarWarsData(
+      "https://swapi.dev/api/people/" + id 
+    );  
+    return JSON.parse(stringResult);
  }
+getDataPeopleById(1).then((people) => console.log(people));
 
  module.exports = {
   getDataPeopleById
