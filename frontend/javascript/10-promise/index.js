@@ -5,7 +5,7 @@ const onMyBirthday = (isMyFriendSick) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (!isMyFriendSick) {
-        return resolve(false);
+        return resolve(true);
       }
 
       return reject(false);

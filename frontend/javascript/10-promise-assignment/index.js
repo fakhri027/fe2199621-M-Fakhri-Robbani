@@ -32,6 +32,7 @@
 
 const https = require("https"); // Dibutuhkan sebagai protokol untuk akses data.
 
+
 /**
  * Untuk memudahkan kami telah menyiapkan fungsi untuk melakukan request data starwars.
  * Contoh params: https://swapi.dev/api/people/1
@@ -63,15 +64,37 @@ function promiseStarWarsData(url) {
 
 function getDataPeopleByIdWithFilms(peopleId) {
   // TODO: answer here
-  return promiseStarWarsData(`https://swapi.dev/api/people/${peopleId}`) 
-    .then(data => {
-      const promises = data.films.map(film => promiseStarWarsData(film));
-      return Promise.all(promises)
-        .then(films => {
-          data.films = films;
-          return data;
+  return promiseStarWarsData(`https://swapi.dev/api/people/${peopleId}`).then(
+    data => {
+      const films = data.films.map(film => {
+        return promiseStarWarsData(film).then(filmData => {
+          return {
+            title: filmData.title,
+            episode_id: filmData.episode_id,
+          };
         });
-    });
+      });
+      return Promise.all(films).then(filmsData => {
+        return {
+          name: data.name,
+          height: data.height,
+          mass: data.mass,
+          hair_color: data.hair_color,
+          skin_color: data.skin_color,
+          eye_color: data.eye_color,
+          birth_year: data.birth_year,
+          gender: data.gender,
+          films: filmsData,
+        };
+      });
+    }
+  );
 }
+function accessPeople() { 
+  getDataPeopleByIdWithFilms(1).then((people) => console.log(people));
+}
+accessPeople()
 
-module.exports = { getDataPeopleByIdWithFilms };
+module.exports = {
+  getDataPeopleByIdWithFilms
+};
