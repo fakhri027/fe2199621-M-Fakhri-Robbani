@@ -24,8 +24,8 @@ function anagramChecker(str1, str2) {
             str1Map.set(str1[i], str1Map.get(str1[i]) + 1);
         } else {
             str1Map.set(str1[i], 1);
-        }
-    }
+        }   
+    }   
 
     for (let i = 0; i < str2.length; i++) {
         if (str2Map.has(str2[i])) {
@@ -35,7 +35,17 @@ function anagramChecker(str1, str2) {
         }
     }
 
-    return str1Map.size === str2Map.size ? "Anagram" : "Bukan Anagram"; // TODO: replace this
+    if (str1Map.size !== str2Map.size) {    
+        return "Bukan Anagram";     
+    }   
+
+    for (let [key, value] of str1Map) {     
+        if (!str2Map.has(key) || str2Map.get(key) !== value) {          
+            return "Bukan Anagram";
+        }           
+    }
+
+    return "Anagram";// TODO: replace this
 }
 
 console.log(anagramChecker("keen", "knee"));
