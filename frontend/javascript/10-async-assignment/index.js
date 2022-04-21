@@ -50,17 +50,20 @@ function getStarWarsData(url) {
 async function getStarshipModelByCharacterId(id) {
   // TODO: answer here
   const stringResult = await getStarWarsData("https://swapi.dev/api/people/" + id);
-  const people = JSON.parse(stringResult);
-  const result = people.starships.map((starship) => {
-    return getStarWarsData(starship).then((starshipResult) => {
-      return JSON.parse(starshipResult).name;
-    });
-  });
-  return result;
+  const result = JSON.parse(stringResult);
+  const starship = result.starships;
+  const starshipModel = []; 
+  for (let i = 0; i < starship.length; i++) {
+    const stringResult = await getStarWarsData(starship[i]);
+    const result = JSON.parse(stringResult);
+    starshipModel.push(result.model);
+  } 
+  return starshipModel;
+  
 }
 async function accessStarship(id) {
-  const result = await getStarshipModelByCharacterId(id);
-  console.log(result);
+  const starshipModel = await getStarshipModelByCharacterId(id);
+  console.log(starshipModel);
 }
 accessStarship(1);
 module.exports = {

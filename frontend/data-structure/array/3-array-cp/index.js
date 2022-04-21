@@ -18,14 +18,25 @@ function mostWordsFound(sentences) {
     for (let i = 0; i < sentences.length; i++) {
         let count = countWords(sentences[i]);
         // TODO: answer here
-    }
+        for (let j = 0; j < sentences.length; j++) {
+            if (count > max) {
+                max = count;
+            }
+        } 
+    } 
     return max
 }
 
 function countWords(sentence) {
-    return 0; // TODO: replace this
+    let count = 0;
+    let words = sentence.split(' ');
+    for (let i = 0; i < words.length; i++) {
+        count++;
+    }
+    return count; // TODO: replace this
 }
-
+console.log(mostWordsFound(["Andi suka bermain bola", "Saya sedang belajar struktur data", "Terima kasih"]));
+console.log(mostWordsFound(["Andi suka bermain bola", "Budi suka bermain basket", "Terima kasih"]));
 module.exports = {
     mostWordsFound, countWords
 }
