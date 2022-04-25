@@ -37,21 +37,22 @@
 
 function countStudentsCantEat(students, sandwiches) {
     while (true) {
-        let anyStudentEat = false;
+        let studentEat = false;
         let queue = students;
         
         let requeueStudents = [];
         while (queue.length > 0) {
+           
             let frontStudent = queue.shift();
             if (sandwiches[0] === frontStudent) {
                 sandwiches.shift();
-                anyStudentEat = true;
+                studentEat = true;
             } else {
                 requeueStudents.push(frontStudent);
             }
         }
         students = requeueStudents;
-        if (!anyStudentEat) {
+        if (!studentEat) {
             break;
         }
     }
