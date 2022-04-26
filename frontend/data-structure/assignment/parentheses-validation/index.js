@@ -22,7 +22,7 @@ function IsValidParentheses(s) {
             }
         }
     }
-
+    return stack.top === -1;
 }
 // console.log(IsValidParentheses(""));    //false
 // console.log(IsValidParentheses("()"));  //true
