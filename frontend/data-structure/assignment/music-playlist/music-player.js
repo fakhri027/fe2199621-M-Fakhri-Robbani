@@ -8,19 +8,24 @@ module.exports = class MusicPlayer {
 
     addSong(song) {
         // TODO: answer here
-        let song = new Song(song)
-        this.playlist.addSong(song)
-    
+        this.playlist.songs.push(song)
     }
 
     play() {
         // TODO: answer here
-        let song = this.playlist.getNextSong()
-
-        if (song) {
-            console.log(`Playing ${song.title} by ${song.artist}`)
-        } else {
-            console.log('No more songs to play')
+        let output = ""
+        if (this.playlist.songs.length === 0) {
+            return output
+        }
+        if (this.playlist.isRepeatable) {
+            let output = "Now Playing " + this.playlist.songs[0].singer + " - " + this.playlist.songs[0].title;
+            return output;
+            }
+        else {
+            let output = "Now Playing " + this.playlist.songs[0].singer + " - " + this.playlist.songs[0].title;
+            this.playlist.songs.shift();
+            return output;
         }
     }
 }
+
