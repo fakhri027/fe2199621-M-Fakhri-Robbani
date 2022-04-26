@@ -17,7 +17,7 @@ module.exports = class MusicPlayer {
         if (this.playlist.songs.length === 0) {
             return output
         }
-        if (this.playlist.isRepeatable === true) {
+        if (this.playlist.isRepeatable) {
             let output = "Now Playing " + this.playlist.songs[0].singer + " - " + this.playlist.songs[0].title;
             this.playlist.songs.push(this.playlist.songs.shift())
             return output;

@@ -2,36 +2,41 @@ const Stack = require('./stack')
 
 function IsValidParentheses(s) {
     // TODO: answer here
-    if (s === "") {
-        return false
+    if(s === ""){
+        return false;
     }
-    let stack = new Stack()
-    let map = {
-        '{': '}',
-        '[': ']',
-        '(': ')'
-    }   
-    for (let i = 0; i < s.length; i++) {
-        if (s[i] in map) {
-            stack.push(s[i])
-        } else {
-            if (stack.peek() === map[s[i]]) {
-                stack.pop()
-            } else {
-                return false
-            }
+    if(s.length % 2 !== 0){
+        return false;
+    }
+
+    let stack = new Stack();
+    for(let i = 0; i < s.length; i++){
+        stack.push(s.charAt(i));
+    }
+    let temp = stack.data;
+
+    if (temp[0] === ")" || temp[0] === "}" || temp[0] === "]" || temp[temp.length-1] === "(" || temp[temp.length-1] === "{" || temp[temp.length-1] === "[") {
+        return false;
+    }
+    if (temp.includes("(") && temp.includes(")") || temp.includes("{") && temp.includes("}") || temp.includes("[") && temp.includes("]")) {
+        if (temp.indexOf("(") > temp.indexOf(")") || temp.indexOf("{") > temp.indexOf("}") || temp.indexOf("[") > temp.indexOf("]")) {
+            return false;
+        }else{
+            return true;
         }
+    }else{
+        return false;
     }
-    return stack.top === -1;
 }
-// console.log(IsValidParentheses(""));    //false
-// console.log(IsValidParentheses("()"));  //true
-// console.log(IsValidParentheses("()[]{}"));  //true
-// console.log(IsValidParentheses("{[()]"));   //false
-// console.log(IsValidParentheses("[()]}"));   //false
-// console.log(IsValidParentheses("[{)]"));    //false
-// console.log(IsValidParentheses("({{"));    //false
-// console.log(IsValidParentheses("]])"));   //false
+
+console.log(IsValidParentheses(""));
+console.log(IsValidParentheses("()"));
+console.log(IsValidParentheses("()[]{}"));
+console.log(IsValidParentheses("{[()]"));   
+console.log(IsValidParentheses("[()]}"));   
+console.log(IsValidParentheses("[{)]"));
+console.log(IsValidParentheses("({{"));
+console.log(IsValidParentheses("]])"));
 
 module.exports = {
     IsValidParentheses
