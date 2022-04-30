@@ -15,7 +15,7 @@ function IsValidParentheses(s) {
     }
     let temp = stack.data;
 
-    if (temp[0] === ")" || temp[0] === "}" || temp[0] === "]" || temp[temp.length-1] === "(" || temp[temp.length-1] === "{" || temp[temp.length-1] === "[") {
+    if (temp[temp.length-1] === "(" || temp[temp.length-1] === "{" || temp[temp.length-1] === "[") {
         return false;
     }
     if (temp.includes("(") && temp.includes(")") || temp.includes("{") && temp.includes("}") || temp.includes("[") && temp.includes("]")) {
