@@ -8,7 +8,7 @@ function App() {
 
 function RandomEmoji() {
   // TODO: answer here
-  const [emoji, setEmoji] = React.useState('🤔');
+  const [emoji, setEmoji] = React.useState('');
   React.useEffect(() => {
     const interval = setInterval(() => {
       setEmoji(generateEmoji());
