@@ -8,6 +8,11 @@ const Container = ({children}) =>{
     const renderTheme = (theme) =>{
         //mengubah background dari container
         // TODO: answer here
+        if (theme == "light") {
+            return styles["light-theme"];
+          } else if (theme == "dark") {
+            return styles["dark-theme"];
+          }
     }
 
     return(

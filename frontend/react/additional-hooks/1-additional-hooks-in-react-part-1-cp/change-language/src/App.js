@@ -13,6 +13,17 @@ const App = () =>{
         //useEffect ini digunakan untuk mendetect perubahan language. bila ada perubahan language lakukan pula perubahan
         //state text.
         // TODO: answer here
+        switch(language){
+            case "indonesian":
+                setText(indonesianText);
+                break;
+            case "english":
+                setText(englishText);
+                break;
+            case "spanish":
+                setText(spanishText);
+                break;
+        }
     }, [language])
 
     return(
