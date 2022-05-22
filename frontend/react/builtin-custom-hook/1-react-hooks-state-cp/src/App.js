@@ -9,13 +9,7 @@ function App() {
 function RandomEmoji() {
   // TODO: answer here
   const [emoji, setEmoji] = React.useState('');
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      setEmoji(generateEmoji());
-    }
-    , 1000);
-    return () => clearInterval(interval);
-  }, []);
+  
   return (
     <div className="wrapper">
       <h1 className='emoji' data-testid="emoji">{emoji}</h1>

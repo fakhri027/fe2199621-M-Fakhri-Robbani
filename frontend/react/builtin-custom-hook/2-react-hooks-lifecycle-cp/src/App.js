@@ -25,7 +25,7 @@ export function RandomQuote() {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-warning">
-        <a href="/">Random Quote</a>
+        <p>Random Quote</p>
       </nav>
       <body className="container p-3">
         <div className="d-flex flex-column justify-content-center align-items-center bg-warning">
