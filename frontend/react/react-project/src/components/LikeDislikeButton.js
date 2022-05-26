@@ -56,9 +56,7 @@ export default function LikeDislikeButton({id, isLiked, isDisliked, likeCount, d
             await axios.get(`${apiUrl}/dislike`, {
                 withCredentials: true,
             });
-            // await axios.get(`${apiUrl}/unlike`, {
-            //     withCredentials: true,
-            // });
+         
         }
         else {
             setIsDislikedBtn(true)

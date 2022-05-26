@@ -35,7 +35,7 @@ export default function Navbar() {
             <li className="navbar-item">
               {
                 isLoggedIn ?
-                  <a className="navbar-link" aria-label="Profile" href="/profile">Profile John Doe</a>
+                  <a className="navbar-link" aria-label="Profile" href="/profile">Profile</a>
                   :
                   <button className="navbar-link" aria-label="Login" onClick={
                     () => {
