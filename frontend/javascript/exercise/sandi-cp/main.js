@@ -40,7 +40,7 @@ function terjemahKataSandi(kataSandi) {
       kataSandi[i] = "E";
     }
   }
-  terjemahKataSandi = kataSandi.join("");
+  terjemahKataSandi = kataSandi.join ("");
   return terjemahKataSandi;
 }
 
